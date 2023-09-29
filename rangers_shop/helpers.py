@@ -25,7 +25,10 @@ def get_image(search):
 
     data = response.json()
     print(data)
-    img_url = data['items'][0]['originalImageUrl'] #traversing data dictionary to get the image url we want
+    img_url = ""
+
+    if "items" in data.keys():
+        img_url = data['items'][0]['originalImageUrl'] #traversing data dictionary to get the image url we want
     return img_url
 
 
